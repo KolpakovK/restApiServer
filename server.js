@@ -2,6 +2,7 @@ require("dotenv").config()
 
 const express = require("express");
 const app = express();
+const cors = require('cors');
 const mongoose = require("mongoose");
 
 const uri = process.env.DATABASE_URL;
@@ -11,6 +12,7 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to db"));
  
+app.use(cors());
 app.use(express.json())
 
 const authRouter = require("./routes/auth"); // Импорт роутов для регистрации и логина
