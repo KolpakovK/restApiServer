@@ -18,6 +18,10 @@ const timeEntrySchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    billable:{
+        type: Boolean,
+        default: true
+    }
 })
 
 module.exports = mongoose.model("TimeEntry",timeEntrySchema)
