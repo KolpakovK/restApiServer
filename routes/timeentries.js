@@ -101,6 +101,7 @@ function transformData(data) {
             "note": entry.note,
             "date": entry.date,
             "task": entry.task,
+            "billable": entry.billable,
             "timeEstimate": entry.timeEstimate,
             "__v": entry.__v
         };
